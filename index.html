@@ -1,51 +1,146 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <style>
+        form {
+            width: 100%;
+        }
+
+        label {
+            flex-basis: 300px;
+        }
+        button {
+            width:100px;
+            height:30px;
+            background-color:#05c2dd;
+            font-size:14px;
+            color:white;
+            border:none;
+        }
+        hr {
+            width:50%;
+            border-width:2px;
+        }
+        .headerArea {
+            text-align:center;
+        }
+          .formField {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+
+        .flex-maincontent {
+            display: -webkit-flex;
+            display: flex;
+            width: 100%;
+            background-color: #e5e5e5;
+        }
+
+        input[type=text] {
+            flex-basis: 100px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 50%;
+            padding:20px 20px 20px 20px;
+        }
+
+        .result {
+            padding:20px 20px 20px 20px;
+        }
+    </style>
+</head>
+
 <body>
-    <div class="greyRow">
+    <div class="headerArea">
         <h2>Hubb ROI Calculator</h2>
-        <h3>This calculator will show you the potential return on investment that you could realize by automating many
-        of your event content management tasks with Hubb.</h3>
+        <h3>This calculator will show you the potential return on investment that you could realize by automating many of your event content management tasks with Hubb.</h3>
+        <hr>
     </div>
-    <div class="mainContent">
-        <h3>Let’s start with some basic information about your event</h3>
-        <p>Note, if you don’t do a call for speakers or presentations, and the first two
-        questions don’t apply to you, simply leave the fields blank.</p>
-
-    <p>How many submissions do you typically receive?</p><input type= "number" id="submissions">
-    <p>How many graders do you have reviewing your submissions?</p><input type= "number" id="graders">
-    <p>How many sessions does your event usually have?</p><input type= "number" id="sessions">
-    <p>How many speakers does your event typically have?</p><input type= "number" id="speakers">
-
-    <button type="button" onclick="myFunction()">Calculate</button>
-    <p>this is your Result</p>
-        <div id="Result">
+    <div class="flex-maincontent">
+        <div class="main">
+            <h3>Let’s start with some basic information about your event</h3>
+            <p>Note, if you don’t do a call for speakers or presentations, and the first two questions don’t apply to you, simply leave the fields blank.</p>
+            <form>
+                <div class="formField">
+                    <label for="submissions">How many submissions do you typically receive?</label>
+                    <input type="text" id="submissions" name="submissions">
+                </div>
+                <div class="formField">
+                    <label for="graders">How many graders do you have reviewing your submissions?</label>
+                    <input type="text" id="graders" name="graders">
+                </div>
+                <div class="formField">
+                    <label for="sessions">How many sessions does your event usually have?</label>
+                    <input type="text" id="sessions" name="sessions">
+                </div>
+                <div class="formField">
+                    <label for="speakers">How many speakers does your event typically have?</label>
+                    <input type="text" id="speakers" name="speakers">
+                </div>
+            </form>
+             <button type="button" onclick="myFunction()">Calculate</button>
+        </div>
+        <div class="result">
+            <p>This is your Result</p>
+            <div id="Result"></div>
+            <div id="cost"></div>
+            <div id="hrsSave"></div>
+            <div id="costSave"></div>
         </div>
     </div>
+    </div>
 
-<script>
-function myFunction() {
-    var x,y,text;
+    <script>
+        function myFunction() {
+            var x, y, text;
 
-    // Get the value of the input field with id="numb"
-    a = (document.getElementById("submissions").value *.15) +(document.getElementById("submissions").value *.2);
-    b = (document.getElementById("graders").value *2);
-    c = (document.getElementById("sessions").value *.65);
-    d = (document.getElementById("speakers").value * .8);
-    x = (parseFloat(a)+parseFloat(b)+parseFloat(c)+parseFloat(d)+360);
+            // Get the value of the input field with id="text"
+            a = (document.getElementById("submissions").value * .15) + (document.getElementById("submissions").value * .2);
+            b = (document.getElementById("graders").value * 2);
+            c = (document.getElementById("sessions").value * .65);
+            d = (document.getElementById("speakers").value * .8);
+            x = (parseFloat(a) + parseFloat(b) + parseFloat(c) + parseFloat(d) + 360);
 
-    // If x is Not a Number or less than one or greater than 10 hrs + "Hours " + cost + "Cost " + hrsSave + "Hours Saved " + costSaved + "Cost Saved"
-    if (isNaN(x)) {
-        text = "Input not valid";
-    } else if ( x < 500){
-        hrs = 502
-        cost = 16000
-        hrsSave = 300
-        costSave = 10000
-        text = hrs + "Hours " + cost + "Cost " + hrsSave + "Hours Saved " + costSave + "Cost Saved";
-    }
-    document.getElementById("Result").innerHTML = x + " " + text;
-}
-</script>
+            // If x is Not a Number or less than one or greater than a value
+            if (isNaN(x)) {
+                text = "Input not valid";
+            } else if (x < 500) {
+                hrs = 502
+                cost = 16000
+                hrsSave = 300
+                costSave = 10000
+            } else if (x <= 500 || x < 700) {
+                hrs = 600
+                cost = 18000
+                hrsSave = 400
+                costSave = 12500
+            } else if (x <= 700 || x < 900) {
+                hrs = 800
+                cost = 25000
+                hrsSave = 550
+                costSave = 16000
+            } else if (x <= 900 || x > 900) {
+                hrs = 1250
+                cost = 40000
+                hrsSave = 800
+                costSave = 26000
+            }
+            document.getElementById("Result").innerHTML = x;
+            document.getElementById("hrsSave").innerHTML = hrsSave + " how much time saved";
+            document.getElementById("costSave").innerHTML = costSave + " how much you money saved";
+            document.getElementById("cost").innerHTML = cost + " how much it costs now";
+
+        }
+    </script>
 
 </body>
-</html> 
+
+</html>
