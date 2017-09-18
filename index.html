@@ -3,12 +3,18 @@
 
 <head>
     <style>
+        body {
+            font-family:'Roboto';
+        }
+        h3 {
+            color:#05c2dd;
+        }
         form {
             width: 100%;
         }
 
         label {
-            flex-basis: 300px;
+            font-size:14px;
         }
         button {
             width:100px;
@@ -17,6 +23,7 @@
             font-size:14px;
             color:white;
             border:none;
+            border-radius:4px;
         }
         hr {
             width:50%;
@@ -31,6 +38,13 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
+        .resultsBox {
+            background-color:white;
+            padding: 10px 10px 10px 10px;
+            height:40px;
+            width:150px;
+            margin-top:10px;
+        }
 
 
         .flex-maincontent {
@@ -43,6 +57,9 @@
         input[type=text] {
             flex-basis: 100px;
             padding: 12px 20px;
+            border-radius: 6px;
+            border-style:none;
+            border-color:black;
             margin: 8px 0;
             box-sizing: border-box;
         }
@@ -54,6 +71,7 @@
 
         .result {
             padding:20px 20px 20px 20px;
+            
         }
     </style>
 </head>
@@ -61,7 +79,7 @@
 <body>
     <div class="headerArea">
         <h2>Hubb ROI Calculator</h2>
-        <h3>This calculator will show you the potential return on investment that you could realize by automating many of your event content management tasks with Hubb.</h3>
+        <p>This calculator will show you the potential return on investment that you could realize by automating many of your event content management tasks with Hubb.</p>
         <hr>
     </div>
     <div class="flex-maincontent">
@@ -90,17 +108,17 @@
         </div>
         <div class="result">
             <p>This is your Result</p>
-            <div id="Result"></div>
-            <div id="cost"></div>
-            <div id="hrsSave"></div>
-            <div id="costSave"></div>
+            <div id="Result" class="resultsBox"></div>
+            <div id="cost" class="resultsBox"></div>
+            <div id="hrsSave" class="resultsBox"></div>
+            <div id="costSave" class="resultsBox"></div>
         </div>
     </div>
     </div>
 
     <script>
         function myFunction() {
-            var x, y, text;
+            var x, text;
 
             // Get the value of the input field with id="text"
             a = (document.getElementById("submissions").value * .15) + (document.getElementById("submissions").value * .2);
@@ -134,9 +152,10 @@
                 costSave = 26000
             }
             document.getElementById("Result").innerHTML = x;
+            document.getElementById("cost").innerHTML = cost + " how much it costs now";
             document.getElementById("hrsSave").innerHTML = hrsSave + " how much time saved";
             document.getElementById("costSave").innerHTML = costSave + " how much you money saved";
-            document.getElementById("cost").innerHTML = cost + " how much it costs now";
+            
 
         }
     </script>
