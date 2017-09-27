@@ -5,6 +5,7 @@
     <style>
         body {
             font-family:'Roboto';
+            font-weight: 300;
         }
         h3 {
             color:#05c2dd;
@@ -17,41 +18,54 @@
             font-size:14px;
         }
         button {
-            width:100px;
+            width:150px;
             height:30px;
             background-color:#05c2dd;
             font-size:14px;
             color:white;
             border:none;
             border-radius:4px;
+            float:right;
+            margin-top:20px;
         }
         hr {
             width:50%;
             border-width:2px;
         }
         .headerArea {
-            text-align:center;
-        }
+    text-align: center;
+    padding: 40px 60px 40px 60px;
+    border-bottom: solid 2px #e5e5e5;
+    padding-left: 165.5px;
+    padding-right: 165.5px;
+}
           .formField {
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            font-weight:500;
         }
         .resultsBox {
             background-color:white;
+            border: solid 1px #05c2dd;
             padding: 10px 10px 10px 10px;
             height:40px;
-            width:150px;
+            flex: 1 0 430px;
             margin-top:10px;
         }
-
 
         .flex-maincontent {
             display: -webkit-flex;
             display: flex;
-            width: 100%;
-            background-color: #e5e5e5;
+            padding-left: 165.5px;
+            padding-right: 165.5px;
+
+        }
+           .newSection {
+    width:40%;
+    padding-left: 165.5px;
+    padding-right: 165.5px;
         }
 
         input[type=text] {
@@ -59,7 +73,7 @@
             padding: 12px 20px;
             border-radius: 6px;
             border-style:none;
-            border-color:black;
+            border: solid 1px #e5e5e5;
             margin: 8px 0;
             box-sizing: border-box;
         }
@@ -70,17 +84,33 @@
         }
 
         .result {
+            display: -webkit-flex;
+            display:flex;
+            flex-direction: column;
+            flex-wrap:wrap;
+            justify-content:center;
+            width:50%;
             padding:20px 20px 20px 20px;
             
+        }
+        #Result {
+        }
+        #cost {
+
+        }
+        #hrsSave {
+
+        }
+        #costSave {
+
         }
     </style>
 </head>
 
 <body>
     <div class="headerArea">
-        <h2>Hubb ROI Calculator</h2>
+        <h3>Hubb ROI Calculator</h3>
         <p>This calculator will show you the potential return on investment that you could realize by automating many of your event content management tasks with Hubb.</p>
-        <hr>
     </div>
     <div class="flex-maincontent">
         <div class="main">
@@ -107,13 +137,23 @@
              <button type="button" onclick="myFunction()">Calculate</button>
         </div>
         <div class="result">
-            <p>This is your Result</p>
-            <div id="Result" class="resultsBox"></div>
-            <div id="cost" class="resultsBox"></div>
-            <div id="hrsSave" class="resultsBox"></div>
-            <div id="costSave" class="resultsBox"></div>
+            <div style="display: flex; flex-direction: row;" >
+                <div id="Result" class="resultsBox"></div>
+                <div id="cost" class="resultsBox"></div>
+            </div>
+            <h3>Impact your bottom line <br> and your effeciency</h3>
+            <div style="display: flex; flex-direction: row;">
+                <div id="hrsSave" class="resultsBox"></div>
+                <div id="costSave" class="resultsBox"></div>
+            </div>
         </div>
     </div>
+        <div class="newSection">
+               <h4>Determining the benefits of using Hubb Event Content Management Software</h4>
+            <p>The ROI calculator uses the details you provide about your event, including number of speakers and
+sessions. It calculates the average ROI based on the results we’ve seen implementing Hubb across our
+client base. Your actual results may vary. </p>
+             </div>
     </div>
 
     <script>
@@ -163,3 +203,8 @@
 </body>
 
 </html>
+
+
+{
+    border-right: solid 1px #e5e5e5;
+}
