@@ -12,16 +12,18 @@
         }
         form {
             width: 100%;
+            padding-top:10px;
         }
 
         label {
             font-size:14px;
         }
         button {
+            font-family: 'Hurme Geometric Sans 4';
             width:150px;
-            height:30px;
+            height:40px;
             background-color:#05c2dd;
-            font-size:14px;
+            font-size:16px;
             color:white;
             border:none;
             border-radius:4px;
@@ -33,44 +35,62 @@
             border-width:2px;
         }
         .headerArea {
-    text-align: center;
-    padding: 40px 60px 40px 60px;
-    border-bottom: solid 2px #e5e5e5;
-    padding-left: 165.5px;
-    padding-right: 165.5px;
-}
+            background-color:#515673;
+            text-align: left;
+            padding: 40px 60px 40px 60px;
+            border-bottom: solid 2px #e5e5e5;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .headerTitle {
+            font-size:30px;
+            font-family: 'Hurme Geometric Sans 4';
+            color:#05c2dd;
+            font-weight:400;
+
+        }
+        .headerSubtitle {
+            font-size:20px;
+            color:white;
+            font-weight:400;
+            width:50%;
+            line-height:1.5;
+
+        }
           .formField {
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            font-weight:500;
+            font-weight:400;
         }
         .resultsBox {
             background-color:white;
-            border: solid 1px #05c2dd;
-            padding: 10px 10px 10px 10px;
+            border: solid 1px #e5e5e5;
+            box-shadow:1px 0px 32px 2px #05C2DD;
+            padding: 20px 10px 10px 10px;
             height:40px;
-            flex: 1 0 430px;
+            text-align:center;
+            font-weight:400;
+            font-size:14px;
+            flex: 0 0 40%;
             margin-top:10px;
         }
 
         .flex-maincontent {
             display: -webkit-flex;
             display: flex;
-            padding-left: 165.5px;
-            padding-right: 165.5px;
+            padding-left: 100px;
+            padding-right: 100px;
 
         }
            .newSection {
-    width:40%;
-    padding-left: 165.5px;
-    padding-right: 165.5px;
+            width:40%;
+            padding: 10px 0px 50px 100px;
         }
 
         input[type=text] {
-            flex-basis: 100px;
-            padding: 12px 20px;
+            padding: 12px 12px;
             border-radius: 6px;
             border-style:none;
             border: solid 1px #e5e5e5;
@@ -79,8 +99,8 @@
         }
 
         .main {
-            width: 50%;
-            padding:20px 20px 20px 20px;
+            width: 55%;
+            padding:20px 20px 20px 0px;
         }
 
         .result {
@@ -89,28 +109,60 @@
             flex-direction: column;
             flex-wrap:wrap;
             justify-content:center;
-            width:50%;
-            padding:20px 20px 20px 20px;
+            width:40%;
+            padding:20px 20px 20px 80px;
             
         }
-        #Result {
+        .contact {
+            display:flex;
+            border-top: solid 2px #e5e5e5;
+            padding-left:100px;
         }
-        #cost {
+        .contactForm {
+            width: 45%;
+            padding:20px 20px 20px 0px;
+        }
+        .contactFormField {
+            margin-top: 10px;
+            display: grid;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight:400;
+        }
+        .submitButton {
+            float:left;
+        }
+        .demoButton {
+            float:none;
+        }
 
+        .learnMore {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            text-align:center;
+            width:40%;
+            padding:20px 20px 20px 80px;
+            
         }
-        #hrsSave {
+        .contactForm input[type=text] {
+            width:280px;
+        }
+        .subtext {
+            font-family: 'Hurme Geometric Sans 4';
+            color:#F44B3F; 
+            font-size:40px; 
+            font-weight:400;
+            margin:10px;
+        }
 
-        }
-        #costSave {
-
-        }
     </style>
 </head>
 
 <body>
     <div class="headerArea">
-        <h3>Hubb ROI Calculator</h3>
-        <p>This calculator will show you the potential return on investment that you could realize by automating many of your event content management tasks with Hubb.</p>
+        <p class="headerTitle">Hubb ROI Calculator</h3>
+        <p class="headerSubtitle">This calculator will show you the potential return on investment that you could realize by automating many of your event content management tasks with Hubb.</p>
     </div>
     <div class="flex-maincontent">
         <div class="main">
@@ -137,24 +189,51 @@
              <button type="button" onclick="myFunction()">Calculate</button>
         </div>
         <div class="result">
-            <div style="display: flex; flex-direction: row;" >
+            <div style="display: flex; flex-direction: row; justify-content:space-between;" >
                 <div id="Result" class="resultsBox"></div>
                 <div id="cost" class="resultsBox"></div>
             </div>
-            <h3>Impact your bottom line <br> and your effeciency</h3>
-            <div style="display: flex; flex-direction: row;">
+            <h3 style="text-align:center; font-weight:500;">Impact your bottom line <br> and your effeciency</h3>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div id="hrsSave" class="resultsBox"></div>
                 <div id="costSave" class="resultsBox"></div>
             </div>
         </div>
     </div>
         <div class="newSection">
-               <h4>Determining the benefits of using Hubb Event Content Management Software</h4>
+               <p style="font-size:18px; font-weight:400;">Determining the benefits of using Hubb Event Content Management Software</p>
             <p>The ROI calculator uses the details you provide about your event, including number of speakers and
 sessions. It calculates the average ROI based on the results we’ve seen implementing Hubb across our
 client base. Your actual results may vary. </p>
              </div>
+<div class="contact">
+    <div class="contactForm">
+            <h3>Ready to get started?</h3>
+            <p>Let us send you a customized action plan that outlines the steps required
+to get Hubb up and running for your event, the increase in efficiency and
+the expected expenses.</p>
+            <form>
+                <div class="contactFormField">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="submissions" name="submissions">
+                </div>
+                <div class="contactFormField">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="graders" name="graders">
+                </div>
+                <div class="contactFormField">
+                    <label for="email">Email</label>
+                    <input type="text" id="sessions" name="sessions">
+                </div>
+            </form>
+             <button class="submitButton" type="button" onclick="">Submit</button>
+        </div>
+    <div class="learnMore">
+        <img src="http://info.hubb.me/hs-fs/hubfs/Hubb-Laptop-Angle-PowerBI-Screenshot.png?t=1506716421868&width=407&name=Hubb-Laptop-Angle-PowerBI-Screenshot.png">
+        <p class="subtext">Learn more about Hubb</p>
+        <button class="demoButton" type="button" onclick="">Schedule a Demo</button>
     </div>
+</div>
 
     <script>
         function myFunction() {
@@ -191,10 +270,10 @@ client base. Your actual results may vary. </p>
                 hrsSave = 800
                 costSave = 26000
             }
-            document.getElementById("Result").innerHTML = x;
-            document.getElementById("cost").innerHTML = cost + " how much it costs now";
-            document.getElementById("hrsSave").innerHTML = hrsSave + " how much time saved";
-            document.getElementById("costSave").innerHTML = costSave + " how much you money saved";
+            document.getElementById("Result").innerHTML = x + " <br> HRS typically spent";
+            document.getElementById("cost").innerHTML = "$" + cost + " <br> Cost of manual process";
+            document.getElementById("hrsSave").innerHTML = hrsSave + " <br> HRS saved using Hubb";
+            document.getElementById("costSave").innerHTML = "$" + costSave + " <br> Typical $ saved using Hubb";
             
 
         }
@@ -203,8 +282,3 @@ client base. Your actual results may vary. </p>
 </body>
 
 </html>
-
-
-{
-    border-right: solid 1px #e5e5e5;
-}
