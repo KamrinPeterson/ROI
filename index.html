@@ -12,7 +12,6 @@
         }
         form {
             width: 100%;
-            padding-top:10px;
         }
 
         label {
@@ -43,7 +42,7 @@
             padding-right: 100px;
         }
         .headerTitle {
-            font-size:30px;
+            font-size:34px;
             font-family: 'Hurme Geometric Sans 4';
             color:#05c2dd;
             font-weight:400;
@@ -62,12 +61,13 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            align-items:center;
             font-weight:400;
         }
         .resultsBox {
             background-color:white;
-            border: solid 1px #e5e5e5;
-            box-shadow:1px 0px 32px 2px #05C2DD;
+            border: solid 1px #7DE1F0;
+            box-shadow:1px 0px 32px 2px #BBECF3;
             padding: 20px 10px 10px 10px;
             height:40px;
             text-align:center;
@@ -86,7 +86,7 @@
         }
            .newSection {
             width:40%;
-            padding: 10px 0px 50px 100px;
+            padding: 10px 0px 70px 100px;
         }
 
         input[type=text] {
@@ -116,10 +116,10 @@
         .contact {
             display:flex;
             border-top: solid 2px #e5e5e5;
-            padding-left:100px;
+            padding: 20px 0px 0px 100px;
         }
         .contactForm {
-            width: 45%;
+            width: 40%;
             padding:20px 20px 20px 0px;
         }
         .contactFormField {
@@ -131,9 +131,11 @@
         }
         .submitButton {
             float:left;
+            width:180px;
         }
         .demoButton {
-            float:none;
+            margin:0;
+            width:180px;
         }
 
         .learnMore {
@@ -153,7 +155,6 @@
             color:#F44B3F; 
             font-size:40px; 
             font-weight:400;
-            margin:10px;
         }
 
     </style>
@@ -166,7 +167,7 @@
     </div>
     <div class="flex-maincontent">
         <div class="main">
-            <h3>Let’s start with some basic information about your event</h3>
+            <h3 style="margin-top:0;">Let’s start with some basic information about your event</h3>
             <p>Note, if you don’t do a call for speakers or presentations, and the first two questions don’t apply to you, simply leave the fields blank.</p>
             <form>
                 <div class="formField">
@@ -201,8 +202,8 @@
         </div>
     </div>
         <div class="newSection">
-               <p style="font-size:18px; font-weight:400;">Determining the benefits of using Hubb Event Content Management Software</p>
-            <p>The ROI calculator uses the details you provide about your event, including number of speakers and
+               <p style="font-size:14px; font-weight:500;">Determining the benefits of using Hubb Event Content Management Software</p>
+            <p style="font-size:12px;">The ROI calculator uses the details you provide about your event, including number of speakers and
 sessions. It calculates the average ROI based on the results we’ve seen implementing Hubb across our
 client base. Your actual results may vary. </p>
              </div>
@@ -226,10 +227,10 @@ the expected expenses.</p>
                     <input type="text" id="sessions" name="sessions">
                 </div>
             </form>
-             <button class="submitButton" type="button" onclick="">Submit</button>
+             <button class="submitButton" type="button" onclick="">Send me the plan</button>
         </div>
     <div class="learnMore">
-        <img src="http://info.hubb.me/hs-fs/hubfs/Hubb-Laptop-Angle-PowerBI-Screenshot.png?t=1506716421868&width=407&name=Hubb-Laptop-Angle-PowerBI-Screenshot.png">
+        <img src="http://info.hubb.me/hs-fs/hubfs/Hubb-Laptop-Angle-PowerBI-Screenshot.png?t=1506716421868&width=477&name=Hubb-Laptop-Angle-PowerBI-Screenshot.png">
         <p class="subtext">Learn more about Hubb</p>
         <button class="demoButton" type="button" onclick="">Schedule a Demo</button>
     </div>
@@ -270,10 +271,10 @@ the expected expenses.</p>
                 hrsSave = 800
                 costSave = 26000
             }
-            document.getElementById("Result").innerHTML = x + " <br> HRS typically spent";
-            document.getElementById("cost").innerHTML = "$" + cost + " <br> Cost of manual process";
-            document.getElementById("hrsSave").innerHTML = hrsSave + " <br> HRS saved using Hubb";
-            document.getElementById("costSave").innerHTML = "$" + costSave + " <br> Typical $ saved using Hubb";
+            document.getElementById("Result").innerHTML = x + "<br>" +" HRS typically spent";
+            document.getElementById("cost").innerHTML = "$" + cost + "<br>" +" Cost of manual process";
+            document.getElementById("hrsSave").innerHTML = hrsSave + "<br>" +" HRS saved using Hubb";
+            document.getElementById("costSave").innerHTML = "$" + costSave + "<br>" + " Typical $ saved using Hubb";
             
 
         }
